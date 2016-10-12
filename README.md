@@ -1,2 +1,2 @@
-# amaxon
-An Amazon Instant Video client
+# chair
+A simple video player
