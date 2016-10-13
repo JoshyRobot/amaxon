@@ -1,0 +1,29 @@
+{
+  "name": "chair",
+  "version": "1.0.0",
+  "description": "An Amazon Instant Video client",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshyRobot/chair.git"
+  },
+  "keywords": [
+    "video",
+    "player"
+  ],
+  "author": "JoshyRobot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshyRobot/chair/issues"
+  },
+  "homepage": "https://github.com/JoshyRobot/chair#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "electron": "^1.4.3"
+  }
+}
