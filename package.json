@@ -4,7 +4,7 @@
   "description": "An Amazon Instant Video client",
   "main": "index.js",
   "scripts": {
-    "test": "electron ."
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JoshyRobot/chair#readme",
   "dependencies": {
+    "d3": "^4.2.7",
     "jquery": "^3.1.1"
   },
   "devDependencies": {

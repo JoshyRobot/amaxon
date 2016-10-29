@@ -6,4 +6,11 @@
 	--shade1: #636564;
 	--shade2: #7c898b;
 	--shade3: #93a3b1;
+  
+  --spacing-edge: 16px;
+  --spacing: 8px;
+  
+  --zoom: 1;
+  
+  --timing: 0.1s;
 }
