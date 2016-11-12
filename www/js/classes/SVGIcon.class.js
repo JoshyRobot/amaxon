@@ -1,40 +1,35 @@
 // Require d3
 var d3 = require('d3')
 
-class SAnimation {
+// SVGIcon class
+class SVGIcon {
   constructor (options) {
-    this.element = options.element
+    this.element = document.querySelector(options.element)
     this.duration = options.duration
     this.states = Object.keys(options.paths)
     this.state = options.state
     this.paths = options.paths
 
-    // Add play-button path
+    // Add svg-icon path
     d3.select(options.element)
       .append('path')
-      .attr('class', 'play-button')
+      .attr('class', 'svg-icon')
       .attr('d', this.paths[this.state])
       .attr('fill', 'var(--foreground)')
   }
 
   change (state) {
-    console.log('Switching to', state)
     // Change state
     this.state = state
 
-    // Modify play-button path
-    d3.select(this.element.querySelector('.play-button'))
+    // Modify svg-icon path
+    d3.select(this.element.querySelector('.svg-icon'))
       .transition()
       .duration(this.duration)
       .attr('d', this.paths[this.state])
       .attr('fill', 'var(--foreground)')
-
-    // Set class
-    // this.element.className = this.state
   }
 }
 
-// Make the standard happy
-window.Animation = SAnimation
-
-module.exports = SAnimation
+// Export Animation class
+module.exports = SVGIcon

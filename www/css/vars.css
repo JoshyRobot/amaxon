@@ -1,16 +1,16 @@
 :root {
-	--background: #333333;
+	--background: #000000;
 	--foreground: #ffffff;
-	--highlight: #43bccd;
-	
+	--highlight: #f12b24;
+
 	--shade1: #636564;
 	--shade2: #7c898b;
 	--shade3: #93a3b1;
-  
+
   --spacing-edge: 16px;
   --spacing: 8px;
-  
-  --zoom: 1;
-  
+
+  --control-size: 36px;
+
   --timing: 0.1s;
 }

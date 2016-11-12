@@ -12,16 +12,34 @@
 </head>
 
 <body>
-  <div id="chair-player">
-    <video id="chair-video" src="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" loop></video>
-    <div id="controls-lower">
-      <span id="progress"></span>
-      <button id="play">
-      <button id="volume">
-        <span id="volume-meter"></span>
+  <div class="chair">
+    <video class="video" preload="auto" src="https://r5---sn-25glen7e.googlevideo.com/videoplayback?signature=8BB06B2DD49B5D6C56331C1F9C07D7006A4045D8.A7800045E049653B05BAC9480AC63A530FBB55D9&source=youtube&mv=m&mt=1477841222&ms=au&ip=62.210.157.28&mn=sn-25glen7e&mm=31&id=o-AANZp5TsKlb1LWQbtcbFy8gqqGVeIVK5TabfrEJPG9Ew&initcwndbps=2872500&ipbits=0&upn=yBRlq6efb2c&pl=20&ei=TBIWWN77K4yQW-_al-gE&itag=22&ratebypass=yes&requiressl=yes&usequic=no&key=yt6&mime=video%2Fmp4&sparams=dur%2Cei%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cnh%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cupn%2Cusequic%2Cexpire&expire=1477863084&nh=IgpwcjAxLnBhcjAxKg0xOTUuMTU0LjMuMjI3&lmt=1477755936929214&dur=793.611&title=Film%20Theory%20ENDING%20The%20Salad%20Fingers%20Mystery"></video>
+    <div class="info-gradient"></div>
+    <div class="info">
+      <span class="title">Title</span>
+    </div>
+    <div class="control-gradient"></div>
+    <div class="controls">
+      <div class="progress">
+        <div class="entire"></div>
+        <div class="buffered"></div>
+        <div class="hovered"></div>
+        <div class="played"></div>
+      </div>
+      <button class="prev">
+        <svg class="prev-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>
-      <button id="fullscreen"></button>
-      <button id="settings"></button>
+      <button class="play">
+        <svg class="play-icon" version="1.1" viewBox="0 0 36 36"></svg>
+      </button>
+      <button class="next">
+        <svg class="next-icon" version="1.1" viewBox="0 0 36 36"></svg>
+      </button>
+      <button class="volume">
+        <div class="volume-meter"></div>
+      </button>
+      <button class="fullscreen"></button>
+      <button class="settings"></button>
     </div>
   </div>
 </body>

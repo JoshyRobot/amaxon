@@ -1,102 +1,171 @@
 @import 'vars.css';
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
+
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-html, body {
-	width: 100%;
-	height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 
-	color: var(--foreground);
-	background: var(--background);
+  color: var(--foreground);
+  background: var(--background);
 
-	font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-button, #play {
-	background: var(--background);
-  opacity: 1;
-
-  box-shadow: 0 0 4px var(--foreground);
-
-	border: none;
-	border-radius: var(--bar-size);
-
-	outline: none;
+.chair .video {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-#chair-video {
-	max-width: 100%;
-	max-height: 100%;
+.chair .info-gradient {
+  width: 100%;
+  height: calc(var(--control-size) * 2.5);
+
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-#controls-lower {
-  width: 100vw;
-  height: 20vw;
-  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.325), rgba(0, 0, 0, 0));
+.chair .info {
+  width: calc(100% - var(--control-size));
+  height: var(--control-size);
+
+  position: fixed;
+  top: 0;
+  left: calc(var(--control-size) / 2);
+}
+
+.chair .info .title {
+  font-size: 100%;
+  line-height: var(--control-size);
+}
+
+.chair .control-gradient {
+  width: 100%;
+  height: calc(var(--control-size) * 2.5);
+
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+
   position: fixed;
   bottom: 0;
   left: 0;
 }
 
-#progress {
-	width: calc(100% - 2 * var(--spacing-edge));
-	height: var(--bar-size);
+.chair .controls {
+  width: calc(100% - var(--control-size));
+  height: calc(var(--control-size) + (var(--control-size) / 3));
 
-	opacity: 0.5;
-	background: var(--foreground);
-
-  box-shadow: 0 0 4px var(--foreground);
-
-	position: fixed;
-	bottom: calc(var(--icon-size) + 2 * var(--spacing));
-	left: var(--spacing-edge);
+  position: fixed;
+  bottom: 0;
+  left: calc(var(--control-size) / 2);
 }
 
-#play {
-  width: calc(46 * var(--zoom));
-	height: calc(36 * var(--zoom));
+.chair .controls .progress {
+  width: 100%;
+  height: calc(var(--control-size) / 3);
 
-	position: fixed;
-	bottom: var(--spacing);
-	left: var(--spacing-edge);
+  cursor: pointer;
 }
 
-#volume {
-	width: var(--icon-size);
-	height: var(--icon-size);
+.chair .controls .progress .entire,
+.chair .controls .progress .buffered,
+.chair .controls .progress .hovered,
+.chair .controls .progress .played {
+  height: calc(var(--control-size) / 12);
 
-	position: fixed;
-	bottom: var(--spacing);
-	left: calc(var(--icon-size) + 2 * var(--spacing-edge));
+  opacity: 0.2;
+  background: var(--foreground);
 
-	overflow: hidden;
+  position: absolute;
+  bottom: var(--control-size);
+  left: 0;
 
-	transition: all var(--timing);
+  transition: height 0.1s;
 }
 
-#volume.show {
+.chair .controls .progress.hover .entire,
+.chair .controls .progress.hover .buffered,
+.chair .controls .progress.hover .hovered,
+.chair .controls .progress.hover .played {
+  height: calc(var(--control-size) / 6);
+}
+
+.chair .controls .progress .entire {
+  width: 100%;
+}
+
+.chair .controls .progress .played {
+  opacity: 1;
+  background: var(--highlight);
+}
+
+.chair .controls button {
+  width: var(--control-size);
+  height: var(--control-size);
+
+  opacity: 0.9;
+  background: none;
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.chair .controls button:hover {
+  opacity: 1;
+}
+
+.chair .controls button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chair .controls .volume {
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  position: fixed;
+  bottom: var(--spacing);
+  left: calc(var(--icon-size) + 2 * var(--spacing-edge));
+
+  overflow: hidden;
+
+  transition: all var(--timing);
+}
+
+.chair .controls .volume.show {
   width: calc(3 * var(--icon-size));
 
-	background: var(--background);
-	background-position: 0 calc(-1 * var(--icon-size));
+  background: var(--background);
+  background-position: 0 calc(-1 * var(--icon-size));
 }
 
-#volume-meter {
-  height: var(--bar-size);
-	background: var(--foreground);
+.chair .controls .volume .volume-meter {
+  height: 3px;
 
   opacity: 0.5;
-	display: block;
+  background: var(--foreground);
+
   position: relative;
   bottom: 0;
   left: 0;
 
-	transition: all var(--timing);
+  display: block;
+
+  transition: all var(--timing);
 }
 
-#volume.show #volume-meter {
-	opacity: 1;
+.chair .controls .volume.show .volume-meter {
+  opacity: 1;
 }
