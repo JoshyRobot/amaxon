@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
 
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
+  <title>chair</title>
+
 	<link rel="stylesheet" href="css/main.css" />
 
   <script src="js/main.js"></script>
@@ -13,33 +14,44 @@
 
 <body>
   <div class="chair">
-    <video class="video" preload="auto" src="https://r5---sn-25glen7e.googlevideo.com/videoplayback?signature=8BB06B2DD49B5D6C56331C1F9C07D7006A4045D8.A7800045E049653B05BAC9480AC63A530FBB55D9&source=youtube&mv=m&mt=1477841222&ms=au&ip=62.210.157.28&mn=sn-25glen7e&mm=31&id=o-AANZp5TsKlb1LWQbtcbFy8gqqGVeIVK5TabfrEJPG9Ew&initcwndbps=2872500&ipbits=0&upn=yBRlq6efb2c&pl=20&ei=TBIWWN77K4yQW-_al-gE&itag=22&ratebypass=yes&requiressl=yes&usequic=no&key=yt6&mime=video%2Fmp4&sparams=dur%2Cei%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cnh%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cupn%2Cusequic%2Cexpire&expire=1477863084&nh=IgpwcjAxLnBhcjAxKg0xOTUuMTU0LjMuMjI3&lmt=1477755936929214&dur=793.611&title=Film%20Theory%20ENDING%20The%20Salad%20Fingers%20Mystery"></video>
+    <video class="video" preload="auto" aria-label="Video" src="video.mp4"></video>
     <div class="info-gradient"></div>
+    <div class="control-gradient"></div>
+    <div class="overlay"></div>
     <div class="info">
       <span class="title">Title</span>
     </div>
-    <div class="control-gradient"></div>
     <div class="controls">
       <div class="progress">
         <div class="entire"></div>
         <div class="buffered"></div>
         <div class="hovered"></div>
         <div class="played"></div>
+        <div class="scrubber"></div>
       </div>
-      <button class="prev">
+      <button class="prev" aria-label="Previous">
         <svg class="prev-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>
-      <button class="play">
+      <button class="play" aria-label="Play">
         <svg class="play-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>
-      <button class="next">
+      <button class="next" aria-label="Next">
         <svg class="next-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>
-      <button class="volume">
+      <!--<button class="volume">
         <div class="volume-meter"></div>
+      </button>-->
+      <div class="time">
+        <span class="current">14:12</span>
+        <span class="separator">/</span>
+        <span class="total">12:34</span>
+      </div>
+      <button class="fullscreen" aria-label="Fullscreen">
+        <svg class="fullscreen-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>
-      <button class="fullscreen"></button>
-      <button class="settings"></button>
+      <button class="windowed" aria-label="Exit Fullscreen">
+        <svg class="windowed-icon" version="1.1" viewBox="0 0 36 36"></svg>
+      </button>
     </div>
   </div>
 </body>

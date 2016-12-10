@@ -1,5 +1,7 @@
+'use strict'
+
 // Require SVGIcon class
-var SVGIcon = require('./SVGIcon.class.js')
+const SVGIcon = require('./SVGIcon.class.js')
 
 // IconContainer class
 class IconContainer {

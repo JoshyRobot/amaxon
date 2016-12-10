@@ -1,10 +1,10 @@
 {
   "name": "chair",
   "version": "1.0.0",
-  "description": "An Amazon Instant Video client",
-  "main": "index.js",
+  "description": "A video player quite similar to YouTube",
+  "main": "./bin/start",
   "scripts": {
-    "start": "electron ."
+    "start": "./node_modules/.bin/electron ."
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,11 @@
   "homepage": "https://github.com/JoshyRobot/chair#readme",
   "dependencies": {
     "d3": "^4.2.7",
-    "jquery": "^3.1.1",
-    "electron": "^1.4.3"
+    "electron": "^1.4.3",
+    "electron-debug": "^1.1.0",
+    "electron-localshortcut": "^1.0.0"
+  },
+  "devDependencies": {
+    "devtron": "^1.4.0"
   }
 }

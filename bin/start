@@ -1,0 +1,14 @@
+#! /usr/bin/env node
+
+'use strict'
+
+// Uncaught exception
+process.on('uncaughtException', (err) => {
+  console.error(err)
+})
+
+// Electron app
+const app = require('../app.js')
+
+// When app ready
+app.on('ready', app.createWindow)

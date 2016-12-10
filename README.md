@@ -1,2 +1,2 @@
 # chair
-A simple video player
+A video player quite similar to YouTube
