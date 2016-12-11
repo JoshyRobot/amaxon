@@ -11,6 +11,10 @@ module.exports = (controls, elems, win, classes, config, lib) => {
   // Start icons
   icons._start()
 
+  // Get opacity variable
+  const bodyStyles = window.getComputedStyle(document.body)
+  const opacity = bodyStyles.getPropertyValue('--opacity')
+
   // Seconds to time
   function time (seconds, pattern = seconds) {
     let timeArr = []
@@ -35,6 +39,67 @@ module.exports = (controls, elems, win, classes, config, lib) => {
     elems.scrubber.style.left = ((to / elems.video.duration) * 100) + '%'
     elems.time.innerHTML = time(to, elems.video.duration) + ' / ' + time(elems.video.duration)
   }
+
+  function controlsVisible (state) {
+    // Check which state to enter
+    if (state) {
+      // Set opacity of controls
+      elems.controls.style.opacity = 1
+      elems.controlGradient.style.opacity = opacity
+
+      // Show cursor
+      elems.overlay.style.cursor = 'default'
+    } else {
+      // Set opacity of controls
+      elems.controls.style.opacity = 0
+      elems.controlGradient.style.opacity = 0
+
+      // Hide cursor
+      elems.overlay.style.cursor = 'none'
+    }
+  }
+
+  // Control hiding
+  let hideTimer = null
+  function resetTimer () {
+    // Disable old timer
+    clearTimeout(hideTimer)
+
+    // Create new timer
+    hideTimer = setTimeout(() => {
+      // Hide or show controls
+      controlsVisible(false)
+    }, 2000)
+
+    // Show controls
+    controlsVisible(true)
+  }
+
+  // Reset hide timer when mouse moves
+  elems.overlay.onmousemove = () => {
+    resetTimer()
+  }
+
+  // End loop when mouse enters controls
+  elems.controls.onmouseenter = () => {
+    clearTimeout(hideTimer)
+  }
+
+  // Restart loop when mouse leaves controls
+  elems.controls.onmouseleave = () => {
+    resetTimer()
+  }
+
+  // When key is pressed restart loop
+  document.documentElement.onkeydown = () => {
+    resetTimer()
+  }
+
+  // When special key pressed
+  controls.on('keypress', document.documentElement.onkeydown)
+
+  // Start loop
+  resetTimer()
 
   // Show correct buttons
   controls.emit('fullscreen', win.isFullScreen())

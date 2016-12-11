@@ -2,14 +2,6 @@
 
 // Expose config
 module.exports = {
-  prev: {
-    element: '.peak .controls .prev .prev-icon',
-    duration: 0,
-    paths: {
-      prev: 'M 12,12 h 2 v 12 h -2 z m 3.5,6 8.5,6 V 12 z'
-    },
-    state: 'prev'
-  },
   play: {
     element: '.peak .controls .play .play-icon',
     duration: 300,
@@ -18,14 +10,6 @@ module.exports = {
       pause: 'M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z'
     },
     state: 'play'
-  },
-  next: {
-    element: '.peak .controls .next .next-icon',
-    duration: 0,
-    paths: {
-      next: 'M 12,24 20.5,18 12,12 V 24 z M 22,12 v 12 h 2 V 12 h -2 z'
-    },
-    state: 'next'
   },
   fullscreen: {
     element: '.peak .controls .fullscreen .fullscreen-icon',

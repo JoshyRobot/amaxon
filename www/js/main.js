@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Save elements for later use
   let elems = {
     video: document.querySelector('.peak .video'),
+    controlGradient: document.querySelector('.peak .control-gradient'),
     overlay: document.querySelector('.peak .overlay'),
+    controls: document.querySelector('.peak .controls'),
     playBtn: document.querySelector('.peak .controls .play'),
     fullscreenBtn: document.querySelector('.peak .controls .fullscreen'),
     windowedBtn: document.querySelector('.peak .controls .windowed'),

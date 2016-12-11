@@ -6,6 +6,7 @@ const ipc = require('electron').ipcRenderer
 // Expose function
 module.exports = (controls, elems, win, classes, config, lib) => {
   ipc.on('key', (event, name) => {
+    controls.emit('keypress')
     switch (name) {
       case 'left': {
         controls.emit('move', -5)
