@@ -3,7 +3,7 @@
 // Expose config
 module.exports = {
   prev: {
-    element: '.chair .controls .prev .prev-icon',
+    element: '.peak .controls .prev .prev-icon',
     duration: 0,
     paths: {
       prev: 'M 12,12 h 2 v 12 h -2 z m 3.5,6 8.5,6 V 12 z'
@@ -11,8 +11,8 @@ module.exports = {
     state: 'prev'
   },
   play: {
-    element: '.chair .controls .play .play-icon',
-    duration: 350,
+    element: '.peak .controls .play .play-icon',
+    duration: 300,
     paths: {
       play: 'M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z',
       pause: 'M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z'
@@ -20,7 +20,7 @@ module.exports = {
     state: 'play'
   },
   next: {
-    element: '.chair .controls .next .next-icon',
+    element: '.peak .controls .next .next-icon',
     duration: 0,
     paths: {
       next: 'M 12,24 20.5,18 12,12 V 24 z M 22,12 v 12 h 2 V 12 h -2 z'
@@ -28,7 +28,7 @@ module.exports = {
     state: 'next'
   },
   fullscreen: {
-    element: '.chair .controls .fullscreen .fullscreen-icon',
+    element: '.peak .controls .fullscreen .fullscreen-icon',
     duration: 150,
     paths: {
       expand: 'M 9,9 h 6 v 2 h -4 v 4 h -2 v 6 z M 27,9 h -6 v 2 h 4 v 4 h 2 v 6 z M 27,27 h -6 v -2 h 4 v -4 h 2 v -6 z M 9,27 h 6 v -2 h -4 v -4 h -2 v -6 z',
@@ -37,7 +37,7 @@ module.exports = {
     state: 'normal'
   },
   windowed: {
-    element: '.chair .controls .windowed .windowed-icon',
+    element: '.peak .controls .windowed .windowed-icon',
     duration: 150,
     paths: {
       shrink: 'M 17,17 h -6 v -2 h 4 v -4 h 2 v 6 z M 19,17 h 6 v -2 h -4 v -4 h -2 v 6 z M 19,19 h 6 v 2 h -4 v 4 h -2 v -6 z M 17,19 h -6 v 2 h 4 v 4 h 2 v -6 z',

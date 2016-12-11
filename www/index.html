@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8" />
 
-  <title>chair</title>
+  <title>peak</title>
 
 	<link rel="stylesheet" href="css/main.css" />
 
@@ -13,14 +13,23 @@
 </head>
 
 <body>
-  <div class="chair">
+  <svg width="0" height="0" style="display:block">
+    <defs>
+      <filter id="dropshadow">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+        <feOffset dx="0" dy="0" result="offsetblur"/>
+        <feMerge>
+          <feMergeNode/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="peak">
     <video class="video" preload="auto" aria-label="Video" src="video.mp4"></video>
-    <div class="info-gradient"></div>
     <div class="control-gradient"></div>
     <div class="overlay"></div>
-    <div class="info">
-      <span class="title">Title</span>
-    </div>
     <div class="controls">
       <div class="progress">
         <div class="entire"></div>
@@ -38,14 +47,7 @@
       <button class="next" aria-label="Next">
         <svg class="next-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>
-      <!--<button class="volume">
-        <div class="volume-meter"></div>
-      </button>-->
-      <div class="time">
-        <span class="current">14:12</span>
-        <span class="separator">/</span>
-        <span class="total">12:34</span>
-      </div>
+      <span class="time"></span>
       <button class="fullscreen" aria-label="Fullscreen">
         <svg class="fullscreen-icon" version="1.1" viewBox="0 0 36 36"></svg>
       </button>

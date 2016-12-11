@@ -28,16 +28,17 @@ const parts = requireFolder('./js/parts', '.part.js')
 document.addEventListener('DOMContentLoaded', () => {
   // Save elements for later use
   let elems = {
-    video: document.querySelector('.chair .video'),
-    overlay: document.querySelector('.chair .overlay'),
-    playBtn: document.querySelector('.chair .controls .play'),
-    fullscreenBtn: document.querySelector('.chair .controls .fullscreen'),
-    windowedBtn: document.querySelector('.chair .controls .windowed'),
-    progress: document.querySelector('.chair .controls .progress'),
-    buffered: document.querySelector('.chair .controls .progress .buffered'),
-    hovered: document.querySelector('.chair .controls .progress .hovered'),
-    played: document.querySelector('.chair .controls .progress .played'),
-    scrubber: document.querySelector('.chair .controls .progress .scrubber')
+    video: document.querySelector('.peak .video'),
+    overlay: document.querySelector('.peak .overlay'),
+    playBtn: document.querySelector('.peak .controls .play'),
+    fullscreenBtn: document.querySelector('.peak .controls .fullscreen'),
+    windowedBtn: document.querySelector('.peak .controls .windowed'),
+    progress: document.querySelector('.peak .controls .progress'),
+    buffered: document.querySelector('.peak .controls .progress .buffered'),
+    hovered: document.querySelector('.peak .controls .progress .hovered'),
+    played: document.querySelector('.peak .controls .progress .played'),
+    scrubber: document.querySelector('.peak .controls .progress .scrubber'),
+    time: document.querySelector('.peak .controls .time')
   }
 
   // When move event emitted
@@ -57,10 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // Hide fullscreen and show windowed
       elems.fullscreenBtn.style.display = 'none'
       elems.windowedBtn.style.display = 'block'
+
+      // Set CSS variable
+      document.documentElement.style.setProperty('--sizing', '48px')
     } else {
       // Show fullscreen and hide windowed
       elems.fullscreenBtn.style.display = 'block'
       elems.windowedBtn.style.display = 'none'
+
+      // Set CSS variable
+      document.documentElement.style.setProperty('--sizing', '36px')
     }
 
     // Change fullscreen state

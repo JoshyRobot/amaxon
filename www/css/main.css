@@ -1,10 +1,11 @@
 @import 'vars.css';
+@import '../fonts/fonts.css';
 
 * {
   margin: 0;
   padding: 0;
 
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: Roboto;
 }
 
 html,
@@ -16,101 +17,85 @@ body {
   background: var(--background);
 
   overflow: hidden;
-
-  font-family: Arial, sans-serif;
 }
 
-.chair .video {
+.peak .video {
   width: 100vw;
   height: 100vh;
 }
 
-.chair .info-gradient {
+.peak .control-gradient {
   width: 100%;
-  height: calc(var(--control-size) * 2.5);
+  height: calc(98 * var(--sizing) / 36);
 
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.chair .info {
-  width: calc(100% - var(--control-size));
-  height: calc(48 * var(--control-size) / 36);
-
-  position: fixed;
-  top: 0;
-  left: calc(var(--control-size) / 2);
-}
-
-.chair .info .title {
-  font-size: calc(36 * var(--control-size) / 36);
-}
-
-.chair .control-gradient {
-  width: 100%;
-  height: calc(var(--control-size) * 2.5);
-
-  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  opacity: var(--opacity);
+  background: -webkit-linear-gradient(bottom, var(--background), rgba(0, 0, 0, 0));
 
   position: fixed;
   bottom: 0;
   left: 0;
 }
 
-.chair .controls {
-  width: calc(100% - var(--control-size));
-  height: calc(48 * var(--control-size) / 36);
+.peak .overlay {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.peak .controls {
+  width: calc(100% - var(--sizing));
+  height: calc(48 * var(--sizing) / 36);
 
   position: fixed;
   bottom: 0;
-  left: calc(18 * var(--control-size) / 36);
+  left: calc(18 * var(--sizing) / 36);
 }
 
-.chair .controls .progress {
+.peak .controls .progress {
   width: 100%;
-  height: calc(12 * var(--control-size) / 36);
+  height: calc(12 * var(--sizing) / 36);
 
   cursor: pointer;
 }
 
-.chair .controls .progress .entire,
-.chair .controls .progress .buffered,
-.chair .controls .progress .hovered,
-.chair .controls .progress .played {
-  height: calc(3 * var(--control-size) / 36);
+.peak .controls .progress .entire,
+.peak .controls .progress .buffered,
+.peak .controls .progress .hovered,
+.peak .controls .progress .played {
+  height: calc(3 * var(--sizing) / 36);
 
-  opacity: 0.2;
+  opacity: 0.4;
   background: var(--foreground);
 
   position: absolute;
-  bottom: var(--control-size);
+  bottom: var(--sizing);
   left: 0;
 
   transition: height 0.1s, bottom 0.1s;
 }
 
-.chair .controls .progress.hover .entire,
-.chair .controls .progress.hover .buffered,
-.chair .controls .progress.hover .hovered,
-.chair .controls .progress.hover .played {
-  height: calc(5 * var(--control-size) / 36);
+.peak .controls .progress.hover .entire,
+.peak .controls .progress.hover .buffered,
+.peak .controls .progress.hover .hovered,
+.peak .controls .progress.hover .played {
+  height: calc(5 * var(--sizing) / 36);
 
-  bottom: calc(var(--control-size) - (5 * var(--control-size) / 36 - var(--control-size) / 12) / 2);
+  bottom: calc(var(--sizing) - (5 * var(--sizing) / 36 - var(--sizing) / 12) / 2);
 }
 
-.chair .controls .progress .entire {
+.peak .controls .progress .entire {
   width: 100%;
 }
 
-.chair .controls .progress .played {
+.peak .controls .progress .played {
   opacity: 1;
   background: var(--highlight);
 }
 
-.chair .controls .progress .scrubber {
+.peak .controls .progress .scrubber {
   width: 0;
   height: 0;
 
@@ -118,27 +103,27 @@ body {
 
   background: var(--highlight);
 
-  border-radius: calc(6.5 * var(--control-size) / 36);
+  border-radius: calc(6.5 * var(--sizing) / 36);
 
   position: absolute;
-  bottom: calc(var(--control-size) + 1.5 * var(--control-size) / 36);
+  bottom: calc(var(--sizing) + 1.5 * var(--sizing) / 36);
   left: 0;
 
   transition: width 0.1s, height 0.1s, bottom 0.1s, margin-left 0.1s;
 }
 
-.chair .controls .progress.hover .scrubber {
-  width: calc(13 * var(--control-size) / 36);
-  height: calc(13 * var(--control-size) / 36);
+.peak .controls .progress.hover .scrubber {
+  width: calc(13 * var(--sizing) / 36);
+  height: calc(13 * var(--sizing) / 36);
 
-  margin-left: calc(-6.5 * var(--control-size) / 36);
+  margin-left: calc(-6.5 * var(--sizing) / 36);
 
-  bottom: calc(var(--control-size) - (13 * var(--control-size) / 36 - var(--control-size) / 12) / 2);
+  bottom: calc(var(--sizing) - (13 * var(--sizing) / 36 - var(--sizing) / 12) / 2);
 }
 
-.chair .controls button {
-  width: var(--control-size);
-  height: var(--control-size);
+.peak .controls button {
+  width: var(--sizing);
+  height: var(--sizing);
 
   opacity: 0.9;
   background: none;
@@ -147,80 +132,35 @@ body {
 
   outline: none;
 
+  display: block;
+  float: left;
+
   cursor: pointer;
   transition: opacity 0.1s;
 }
 
-.chair .controls button:hover {
+.peak .controls button:hover {
   opacity: 1;
 }
 
-.chair .controls button svg {
+.peak .controls button svg {
   width: 100%;
   height: 100%;
 }
 
-.chair .controls .volume {
-  width: var(--icon-size);
-  height: var(--icon-size);
+.peak .controls .time {
+  display: inline-block;
 
-  position: fixed;
-  bottom: var(--spacing);
-  left: calc(var(--icon-size) + 2 * var(--spacing-edge));
+  text-shadow: 0 0 calc(4 * var(--sizing) / 36) var(--background);
 
-  overflow: hidden;
-
-  transition: all var(--timing);
+  font-size: calc(14 * var(--sizing) / 36);
+  font-weight: 300;
+  line-height: var(--sizing);
 }
 
-.chair .controls .volume.show {
-  width: calc(3 * var(--icon-size));
-
-  background: var(--background);
-  background-position: 0 calc(-1 * var(--icon-size));
-}
-
-.chair .controls .volume .volume-meter {
-  height: 3px;
-
-  opacity: 0.5;
-  background: var(--foreground);
-
-  position: relative;
-  bottom: 0;
-  left: 0;
-
-  display: block;
-
-  transition: all var(--timing);
-}
-
-.chair .controls .volume.show .volume-meter {
-  opacity: 1;
-}
-
-.chair .controls .fullscreen,
-.chair .controls .windowed {
+.peak .controls .fullscreen,
+.peak .controls .windowed {
   position: absolute;
   bottom: 0;
   right: 0;
-}
-
-.chair .controls .time {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  height: 36px;
-}
-
-.chair .controls .time span {
-  font-size: 13px;
-}
-
-.chair .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }

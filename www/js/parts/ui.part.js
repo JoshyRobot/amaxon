@@ -1,5 +1,8 @@
 'use strict'
 
+// Require sprintf
+const {sprintf} = require('sprintf-js')
+
 // Export function
 module.exports = (controls, elems, win, classes, config, lib) => {
   // Create icon container
@@ -8,10 +11,29 @@ module.exports = (controls, elems, win, classes, config, lib) => {
   // Start icons
   icons._start()
 
+  // Seconds to time
+  function time (seconds, pattern = seconds) {
+    let timeArr = []
+    if (pattern / 3600 > 1) {
+      timeArr.push(Math.floor(seconds / 3600))
+      seconds = seconds % 3600
+    }
+    timeArr.push(Math.floor(seconds / 60))
+    seconds = seconds % 60
+    timeArr.push(Math.floor(seconds))
+    timeArr.forEach((val, index) => {
+      if (index) {
+        timeArr[index] = sprintf('%02d', val)
+      }
+    })
+    return timeArr.join(':')
+  }
+
   // Move progress bar
   function moveProgress (to) {
     elems.played.style.width = ((to / elems.video.duration) * 100) + '%'
     elems.scrubber.style.left = ((to / elems.video.duration) * 100) + '%'
+    elems.time.innerHTML = time(to, elems.video.duration) + ' / ' + time(elems.video.duration)
   }
 
   // Show correct buttons
@@ -43,6 +65,7 @@ module.exports = (controls, elems, win, classes, config, lib) => {
     let duration = elems.video.duration
     if (duration > 0) {
       elems.buffered.style.width = ((bufferedEnd / duration) * 100) + '%'
+      elems.time.innerHTML = time(0, elems.video.duration) + ' / ' + time(elems.video.duration)
     }
   }
 

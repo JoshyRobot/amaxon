@@ -18,6 +18,7 @@ class SVGIcon {
       .attr('class', 'svg-icon')
       .attr('d', this.paths[this.state])
       .attr('fill', 'var(--foreground)')
+      .attr('style', 'filter:url(#dropshadow)')
   }
 
   change (state) {
@@ -30,6 +31,7 @@ class SVGIcon {
       .duration(this.duration)
       .attr('d', this.paths[this.state])
       .attr('fill', 'var(--foreground)')
+      .attr('style', 'filter:url(#dropshadow)')
   }
 }
 

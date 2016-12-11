@@ -1,5 +1,5 @@
 {
-  "name": "chair",
+  "name": "peak",
   "version": "1.0.0",
   "description": "A video player quite similar to YouTube",
   "main": "./bin/start",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoshyRobot/chair.git"
+    "url": "git+https://github.com/JoshyRobot/peak.git"
   },
   "keywords": [
     "video",
@@ -17,14 +17,15 @@
   "author": "JoshyRobot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JoshyRobot/chair/issues"
+    "url": "https://github.com/JoshyRobot/peak/issues"
   },
-  "homepage": "https://github.com/JoshyRobot/chair#readme",
+  "homepage": "https://github.com/JoshyRobot/peak#readme",
   "dependencies": {
     "d3": "^4.2.7",
     "electron": "^1.4.3",
     "electron-debug": "^1.1.0",
-    "electron-localshortcut": "^1.0.0"
+    "electron-localshortcut": "^1.0.0",
+    "sprintf-js": "^1.0.3"
   },
   "devDependencies": {
     "devtron": "^1.4.0"

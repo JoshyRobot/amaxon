@@ -17,10 +17,11 @@ app.createWindow = function () {
 
   // Create the browser window.
   win = new BrowserWindow({
-    title: 'chair',
+    title: 'peak',
     useContentSize: true,
     width: 640,
-    height: 360
+    height: 360,
+    icon: './images/icon.png'
   })
 
   // Create shortcuts
